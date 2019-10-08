@@ -30,19 +30,24 @@ public class maxTimePage extends PageObject {
     public void realizarNuevoReporte() throws AWTException {
         $("//a[@title='Nuevo Detalle Reporte Dia'][contains(.,'Nuevo')]").waitUntilClickable().click();
         waitFor(2).seconds();
-        Actions a = new Actions(getDriver());
-        WebElement buscarServicios = $("tr td#Vertical_v6_MainLayoutEdit_xaf_l128_xaf_dviProyecto_Edit_Find_B");
-        a.moveToElement(buscarServicios).click(buscarServicios).build().perform();
-        waitFor(2).seconds();
-
         WebDriverWait iframe = new WebDriverWait(getDriver(), 5);
+        Actions a = new Actions(getDriver());
+        WebElement buscarProyecto = $("tr td#Vertical_v6_MainLayoutEdit_xaf_l128_xaf_dviProyecto_Edit_Find_B");
+        WebElement buscarServicio = $("//table[@id='Vertical_v6_MainLayoutEdit_xaf_l153_xaf_dviServicio_Edit_Find']");
+        a.moveToElement(buscarProyecto).click(buscarProyecto).build().perform();
+        waitFor(2).seconds();
         iframe.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("(//iframe)[1]")));
         //  getDriver().switchTo().frame(getDriver().findElement(By.xpath("(//iframe)[1]")));
         a.moveToElement(findBy("//td[@id='Dialog_v7_LE_v8_tccell0_4']")).click().build().perform();
         waitFor(5).seconds();
         a.click(findBy("table[id*='TipoHora'] input[id*='TipoHora_Edit_DD_I']"));
-        $("table[id*='TipoHora'] input[id*='TipoHora_Edit_DD_I']").typeAndEnter("H. Choucair");
+        $("table[id*='TipoHora'] input[id*='TipoHora_Edit_DD_I']").typeAndTab("H. Choucair");
+        a.moveToElement(buscarServicio,748,400).click().build().perform();
         waitFor(3).seconds();
+        iframe.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("(//iframe)[2]")));
+        $("td.dxic input[value='Text to search...']").typeAndEnter(".");
+        waitFor(3).seconds();
+
 
 
         /*try {
