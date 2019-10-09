@@ -105,6 +105,9 @@ public class maxTimePage extends PageObject {
             act.moveToElement(btnCategoria).perform();
             act.moveToElement(catSupermercado).perform();
             act.moveToElement(catDespensa).perform();
+
+     //     ======================  enter("Hola").into(btnComprar); ==============================
+
      //       if ( (i == 14) || (i == 15) || (i == 16)) {
      //   WebElement padre = getDriver().findElement(By.cssSelector("//li[@class='despensa']//ul"));
         //WebElement hijo = getDriver().findElement(By.cssSelector("li.despensa li:nth-of-type(10) a"));
