@@ -16,8 +16,8 @@ public class maxTimeSteps {
     //    maxTimePage.seleccionardia();
     //    maxTimePage.realizarNuevoReporte();
         maxTimePage.seleccionarCategoria();
-        maxTimePage.hacerClick();
-      //  maxTimePage.otra();
+     //  maxTimePage.hacerClick();
+     //  maxTimePage.otra();
     }
     public void ValidarCierreDia()  {
 

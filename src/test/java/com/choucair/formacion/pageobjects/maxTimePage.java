@@ -3,7 +3,9 @@ package com.choucair.formacion.pageobjects;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.actions.*;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.apache.tools.ant.taskdefs.WaitFor;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -35,7 +37,7 @@ public class maxTimePage extends PageObject {
     public void login() {
         $("//input[contains(@id,'Logon_v0_MainLayoutEdit_xaf_l30_xaf_dviUserName_Edit_I')]").type("cmestral");
         $("td.dxic input[type='password']").type("2619rey9");
-        $("//a[@href='javascript:;']").waitUntilClickable().click();
+        $("//a[@href='javascript:;']").click();
         waitFor(5).seconds();
     }
 
@@ -86,46 +88,50 @@ public class maxTimePage extends PageObject {
        // $("td.dxic input[value='Text to search...']").typeAndEnter("Varios Choucair Medellín");
         }
 
-       /* public void otra(){
-        waitFor(10).seconds();
-     //   $("//h5[contains(.,'Subcategorias')]").click();
-            JavascriptExecutor jse = (JavascriptExecutor) getDriver();
-            jse.executeScript("window.scrollBy(0, 300)");
-            $("fieldset.open div[style] a:nth-of-type(16)").click();
 
-        }*/
+
+
     public void seleccionarCategoria (){
-     //   java.util.List<WebElement> divs = getDriver().findElements(By.cssSelector("li.despensa li"));
+        Actions act = new Actions(getDriver());
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+
         List<WebElementFacade> divs = findAll("li.despensa li");
-     //   return extract(divs, on(WebElement.class).getText());
         int count = divs.size();
-        System.out.println("==================" +count+ " ========================");
+        System.out.println("================== "  +count+  " ========================");
       //  for (int i = 13; i <= count; i++) {
-            Actions act = new Actions(getDriver());
             act.moveToElement(btnCategoria).perform();
             act.moveToElement(catSupermercado).perform();
             act.moveToElement(catDespensa).perform();
 
-     //     ======================  enter("Hola").into(btnComprar); ==============================
 
      //       if ( (i == 14) || (i == 15) || (i == 16)) {
-     //   WebElement padre = getDriver().findElement(By.cssSelector("//li[@class='despensa']//ul"));
-        //WebElement hijo = getDriver().findElement(By.cssSelector("li.despensa li:nth-of-type(10) a"));
+        WebElement hijo = getDriver().findElement(By.cssSelector("li.despensa li:nth-of-type(16) a"));
+        js.executeScript("arguments[0].scrollIntoView();", hijo);
+        $("li.despensa li:nth-of-type(16) a").click();
+
+     // FORMAS DE SCROLL
+
+     // js.executeScript("arguments[0].scrollIntoView();", hijo);
+     // Scroll.to(hijo);
+     // new ScrollToBy(hijo);
+     // new ScrollToWebElement(hijo);
+     // js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+
+     // BUSCAR ELEMENTOS VISIBLES ANIDADOS (PADRES E HIJOS)
+
        /* By padre = By.xpath("//li[@class='despensa']//ul");
-        By hijo = By.cssSelector("li.despensa li:nth-of-type(16) a");
-        waitFor(3).seconds();
+          By hijo = By.cssSelector("li.despensa li:nth-of-type(16) a");
+
         ExpectedCondition expectedCondition = ExpectedConditions.visibilityOfNestedElementsLocatedBy(padre, hijo);
-        System.out.println(expectedCondition.toString());*/
+        System.out.println(expectedCondition.toString()); */
 
       //      }
      //   }
 
 
 }
-        public void hacerClick(){
-            $("li.despensa li:nth-of-type(16) a").waitUntilClickable().click();
 
-        }
 }
 
 
