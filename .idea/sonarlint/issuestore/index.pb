@@ -9,3 +9,5 @@ l
 <src/test/java/com/choucair/formacion/steps/maxTimeSteps.java,b\b\bba594c5bf76aecdd24ce79d858b3a7ffdf595d6
 q
 Asrc/test/java/com/choucair/formacion/pageobjects/maxTimePage.java,a\4\a43397511bc7487b9294c52828d3f3a47c6bda99
+C
+serenity.properties,2\5\25f1bbdc8dba7ca4a4b90251f1ef69621b24a28c

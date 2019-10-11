@@ -10,14 +10,12 @@ public class maxTimeSteps {
     @Step
     public void entrarMaxtime()  {
         maxTimePage.open();
-    //    maxTimePage.login();
     }
-    public void realizarReporte() throws AWTException {
-    //    maxTimePage.seleccionardia();
-    //    maxTimePage.realizarNuevoReporte();
-        maxTimePage.seleccionarCategoria();
-     //  maxTimePage.hacerClick();
-     //  maxTimePage.otra();
+    public void realizarReporte() throws AWTException, InterruptedException {
+      /* maxTimePage.login();
+       maxTimePage.seleccionardia();
+       maxTimePage.realizarNuevoReporte();*/
+       maxTimePage.seleccionarCategoria();
     }
     public void ValidarCierreDia()  {
 

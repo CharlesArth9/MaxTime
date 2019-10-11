@@ -3,27 +3,25 @@ package com.choucair.formacion.pageobjects;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.serenitybdd.screenplay.actions.*;
 import net.thucydides.core.annotations.DefaultUrl;
-import org.apache.tools.ant.taskdefs.WaitFor;
-import org.junit.jupiter.api.Test;
+import org.awaitility.Awaitility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.List;
-
-import static org.omg.CORBA.WStringValueHelper.extract;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 //@DefaultUrl("https://www.tiendasjumbo.co/supermercado/despensa/te-infusiones-e-instantaneos")
 @DefaultUrl("https://www.tiendasjumbo.co")
 //@DefaultUrl("https://cutt.ly/JeukmvJ")
+//@DefaultUrl("https://cutt.ly/UeorwqO")
 public class maxTimePage extends PageObject {
     @FindBy(xpath = "//span[contains(text(),'CATEGORÍAS')]")
     WebElementFacade btnCategoria;
@@ -34,6 +32,16 @@ public class maxTimePage extends PageObject {
       @FindBy (xpath = "(//button[@data-productid]//span[@class='product-add-to-cart__text'][contains(.,'Comprar')])[1]")
     WebElementFacade btnComprar;
 
+    // ==================  METODO DE ESPERA  =======================
+    private static Callable<Boolean> succesfullCondition(){
+        return new Callable<Boolean>() {
+            public Boolean call() throws Exception{
+                Boolean allMessagesProcessed = true;
+                return allMessagesProcessed;
+            }
+        };
+    }
+    // ==============================================================
     public void login() {
         $("//input[contains(@id,'Logon_v0_MainLayoutEdit_xaf_l30_xaf_dviUserName_Edit_I')]").type("cmestral");
         $("td.dxic input[type='password']").type("2619rey9");
@@ -51,13 +59,13 @@ public class maxTimePage extends PageObject {
         waitFor(2).seconds();
         WebDriverWait iframe = new WebDriverWait(getDriver(), 5);
         Actions a = new Actions(getDriver());
-        WebElement buscarProyecto = $("tr td#Vertical_v6_MainLayoutEdit_xaf_l128_xaf_dviProyecto_Edit_Find_B");
-        WebElement buscarServicio = $("//table[@id='Vertical_v6_MainLayoutEdit_xaf_l153_xaf_dviServicio_Edit_Find']");
+        WebElement buscarProyecto = $("tr td#Vertical_v11_MainLayoutEdit_xaf_l135_xaf_dviProyecto_Edit_Find_B");
+        WebElement buscarServicio = $("//td[@id='Vertical_v11_MainLayoutEdit_xaf_l160_xaf_dviServicio_Edit_Find_B']");
         a.moveToElement(buscarProyecto).click(buscarProyecto).build().perform();
         waitFor(2).seconds();
-        iframe.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("(//iframe)[1]")));
+        iframe.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe")));
         //  getDriver().switchTo().frame(getDriver().findElement(By.xpath("(//iframe)[1]")));
-        a.moveToElement(findBy("//td[@id='Dialog_v7_LE_v8_tccell0_4']")).click().build().perform();
+        a.moveToElement(findBy("//td[@id='Dialog_v6_LE_v7_tccell0_4']")).click().build().perform();
         waitFor(5).seconds();
         a.click(findBy("table[id*='TipoHora'] input[id*='TipoHora_Edit_DD_I']"));
         $("table[id*='TipoHora'] input[id*='TipoHora_Edit_DD_I']").typeAndTab("H. Choucair");
@@ -89,27 +97,60 @@ public class maxTimePage extends PageObject {
         }
 
 
+     public void slide(){
+     //   WebElement slider = getDriver().findElement(By.xpath("//div[@aria-labelledby='filter-toolbar-price-handle']"));
+       //  new Actions(getDriver()).dragAndDropBy(slider,-188,0).build().perform();
+         ((JavascriptExecutor)getDriver()).executeScript("document.getElementsByClassName('fl-slider__handle')[0].style.left='20%'");
+
+     }
 
 
-    public void seleccionarCategoria (){
+
+    public void seleccionarCategoria () throws AWTException, InterruptedException {
         Actions act = new Actions(getDriver());
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
         List<WebElementFacade> divs = findAll("li.despensa li");
         int count = divs.size();
         System.out.println("================== "  +count+  " ========================");
-      //  for (int i = 13; i <= count; i++) {
             act.moveToElement(btnCategoria).perform();
             act.moveToElement(catSupermercado).perform();
             act.moveToElement(catDespensa).perform();
 
 
-     //       if ( (i == 14) || (i == 15) || (i == 16)) {
         WebElement hijo = getDriver().findElement(By.cssSelector("li.despensa li:nth-of-type(16) a"));
         js.executeScript("arguments[0].scrollIntoView();", hijo);
-        $("li.despensa li:nth-of-type(16) a").click();
+        hijo.click();
+    //    getDriver().manage().deleteAllCookies();
+    //   getDriver().manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS );
+    //   getDriver().manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS );
+    //   Thread.sleep(5000);
 
-     // FORMAS DE SCROLL
+        // ==================  METODO DE ESPERA  =======================
+
+        try {
+            Awaitility.await().forever().pollInterval(8000, TimeUnit.MILLISECONDS).until(succesfullCondition());
+        }catch (Exception e){
+            e.getMessage();
+        }
+       // ===================================================================
+    //    waitForTextToAppear("Supermercado");
+        /*act.moveToElement(findBy("span.selection"));
+        $("select[class*='order-by-select']").selectByIndex(2);*/
+        /*By div = By.cssSelector("div.shelf-order-by");
+        By select = By.cssSelector("select[class*='order-by-select']");
+
+        ExpectedCondition expectedCondition = ExpectedConditions.visibilityOfNestedElementsLocatedBy(div, select);
+        System.out.println(expectedCondition.toString());*/
+       //  waitFor("select[class*='order-by-select']").getDriver().findElement(By.xpath("//span[contains(@id,'select2-g6ek-container')]")).click();
+      //  WebDriverWait waite = new WebDriverWait(getDriver(), 10);
+     //   waite.until(ExpectedConditions.visibilityOfElementLocated(By.id("select2-g6ek-container")));
+    //  waitFor(5).seconds();
+       $("//*[@id='search-results-page']/div[29]/div/div[2]/div[3]/div[2]/div[1]/span/span[1]").click();
+
+
+
+        // FORMAS DE SCROLL
 
      // js.executeScript("arguments[0].scrollIntoView();", hijo);
      // Scroll.to(hijo);

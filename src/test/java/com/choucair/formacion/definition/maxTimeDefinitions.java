@@ -17,7 +17,7 @@ public class maxTimeDefinitions {
     }
 
     @When("^realizo el reporte del dia$")
-    public void realizo_el_reporte_del_dia() throws AWTException {
+    public void realizo_el_reporte_del_dia() throws AWTException, InterruptedException {
         maxTimeSteps.realizarReporte();
     }
 
