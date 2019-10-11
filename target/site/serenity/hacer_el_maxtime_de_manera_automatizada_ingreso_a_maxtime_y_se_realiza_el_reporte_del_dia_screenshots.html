@@ -129,7 +129,7 @@
             <a href="requirement_type_feature.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 11-10-2019 11:36</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 11-10-2019 14:07</span>
     <br style="clear:left"/>
 </div>
 
@@ -170,9 +170,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></span>
+                            <span class="outcome-icon"><i class='fa fa-exclamation-triangle error-icon fa-2x' title='ERROR'></i></span>
                             <span class="test-case-title">
-                                <span class="success-color">ingreso a maxtime y se realiza el reporte del dia
+                                <span class="error-color">ingreso a maxtime y se realiza el reporte del dia
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -189,13 +189,50 @@
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">No such window exception: no such window: target window already closed</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>org.openqa.selenium.NoSuchWindowException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>com.choucair.formacion.pageobjects.maxTimePage.seleccionarCategoria(maxTimePage.java:147)<br />com.choucair.formacion.steps.maxTimeSteps.realizarReporte(maxTimeSteps.java:18)<br />com.choucair.formacion.definition.maxTimeDefinitions.realizo_el_reporte_del_dia(maxTimeDefinitions.java:21)<br />✽.realizo el reporte del dia(src/test/resources/features/maxTime.feature:5)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="#" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="3cd14badb329971c17022664e92cd93025e107779770aa5a68f0af445b86f394.png" title=" Given ingreso a MaxTime" width="1366"/>
-                <img src="3cd14badb329971c17022664e92cd93025e107779770aa5a68f0af445b86f394.png" title=" Entrar maxtime" width="1366"/>
-                <img src="3cd14badb329971c17022664e92cd93025e107779770aa5a68f0af445b86f394.png" title=" Given ingreso a MaxTime (completed)" width="1366"/>
-                <img src="ff987252ccad02ca142522a1569cad174ae5def2ffdf6b1b580416200b287a0e.png" title=" When realizo el reporte del dia" width="1366"/>
-                <img src="ff987252ccad02ca142522a1569cad174ae5def2ffdf6b1b580416200b287a0e.png" title=" Then verifico el cierre del dia de manera correcta: <span class='success-color'>SUCCESS</span>" width="1366"/>
+                <img src="a5d061cee501f355fc7e263f7bde5c36bfa39c074e28135ca96498d5a8fce64f.png" title=" Given ingreso a MaxTime" width="1366"/>
+                <img src="a5d061cee501f355fc7e263f7bde5c36bfa39c074e28135ca96498d5a8fce64f.png" title=" Entrar maxtime" width="1366"/>
+                <img src="a5d061cee501f355fc7e263f7bde5c36bfa39c074e28135ca96498d5a8fce64f.png" title=" Given ingreso a MaxTime (completed): <span class='error-color'>ERROR</span>" width="1366"/>
             </div>
         </div>
 
