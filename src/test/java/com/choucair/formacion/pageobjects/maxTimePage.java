@@ -59,7 +59,7 @@ public class maxTimePage extends PageObject{
      }
 
      public void seleccionardia(){
-          new Actions( getDriver() ).moveByOffset( 369, 212 ).click().build().perform();
+          accion.moveByOffset( 369, 212 ).click().build().perform();
           waitFor( 5 ).seconds();
      }
 
