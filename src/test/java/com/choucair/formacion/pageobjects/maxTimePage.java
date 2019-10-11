@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
@@ -40,7 +41,7 @@ public class maxTimePage extends PageObject{
      }
 
      // ==================  METODO DE ESPERA  =======================
-     private static Callable <Boolean> succesfullCondition(){
+     private static Callable <Boolean> condicionEstaCompleta(){
           return new Callable <Boolean>(){
                public Boolean call() throws Exception{
                     Boolean allMessagesProcessed = true;
@@ -86,11 +87,12 @@ public class maxTimePage extends PageObject{
           //  WebElement slider = getDriver().findElement(By.xpath("//div[@aria-labelledby='filter-toolbar-price-handle']"));
           //  new Actions(getDriver()).dragAndDropBy(slider,-188,0).build().perform();
           js.executeScript( "document.getElementsByClassName('fl-slider__handle')[0].style.left='20%'" );
-
+          robot.keyPress( KeyEvent.VK_DOWN );
+          robot.keyPress( KeyEvent.VK_ENTER );
      }
 
 
-     public void seleccionarCategoria() {
+     public void seleccionarCategoria(){
 
           List <WebElementFacade> divs = findAll( "li.despensa li" );
           int count = divs.size();
@@ -112,7 +114,7 @@ public class maxTimePage extends PageObject{
           // ==================  METODO DE ESPERA  =======================
 
           try {
-               Awaitility.await().forever().pollInterval( 8000, TimeUnit.MILLISECONDS ).until( succesfullCondition() );
+               Awaitility.await().forever().pollInterval( 8000, TimeUnit.MILLISECONDS ).until( condicionEstaCompleta() );
           } catch (Exception e) {
                e.getMessage();
           }
@@ -151,7 +153,6 @@ public class maxTimePage extends PageObject{
           By hijo = By.cssSelector("li.despensa li:nth-of-type(16) a");
           ExpectedCondition expectedCondition = ExpectedConditions.visibilityOfNestedElementsLocatedBy(padre, hijo);
           System.out.println(expectedCondition.toString()); */
-
 
 
      }
