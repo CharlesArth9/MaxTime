@@ -3,6 +3,8 @@ package com.choucair.formacion.steps;
 import com.choucair.formacion.pageobjects.maxTimePage;
 import net.thucydides.core.annotations.Step;
 
+import java.awt.*;
+
 
 public class maxTimeSteps{
      maxTimePage maxTimePage;
@@ -12,11 +14,11 @@ public class maxTimeSteps{
           maxTimePage.open();
      }
 
-     public void realizarReporte() {
-      /* maxTimePage.login();
+     public void realizarReporte() throws AWTException{
+         maxTimePage.login("cmestral","2619rey9");
          maxTimePage.seleccionardia();
-         maxTimePage.realizarNuevoReporte(); */
-         maxTimePage.seleccionarCategoria();
+         maxTimePage.realizarNuevoReporte();
+      //   maxTimePage.seleccionarCategoria();
      }
 
      public void ValidarCierreDia(){

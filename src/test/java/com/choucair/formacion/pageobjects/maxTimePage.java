@@ -19,17 +19,17 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-@DefaultUrl("https://www.tiendasjumbo.co")
-//@DefaultUrl("https://cutt.ly/JeukmvJ")
+//@DefaultUrl("https://www.tiendasjumbo.co")
+@DefaultUrl("https://cutt.ly/JeukmvJ")
 //@DefaultUrl("https://cutt.ly/UeorwqO")
 
 public class maxTimePage extends PageObject{
      @FindBy(xpath = "//span[contains(text(),'CATEGORÍAS')]")
-     WebElementFacade btnCategoria;
+     private WebElementFacade btnCategoria;
      @FindBy(xpath = "//body/div/div/div/ul/li[1]/span[1]/a[1]/span[1]")
-     WebElementFacade catSupermercado;
+     private WebElementFacade catSupermercado;
      @FindBy(xpath = "//span[contains(text(),'Despensa')]")
-     WebElementFacade catDespensa;
+     private WebElementFacade catDespensa;
 
      // ============ INSTANCIAS =============
      WebDriverWait espera = new WebDriverWait( getDriver(), 20 ); // TIEMPO EXPLICITO
@@ -51,9 +51,9 @@ public class maxTimePage extends PageObject{
      }
 
      // ==============================================================
-     public void login(){
-          $( "//input[contains(@id,'Logon_v0_MainLayoutEdit_xaf_l30_xaf_dviUserName_Edit_I')]" ).type( "cmestral" );
-          $( "td.dxic input[type='password']" ).type( "2619rey9" );
+     public void login(String usuario, String pass){
+          $( "//input[contains(@id,'Logon_v0_MainLayoutEdit_xaf_l30_xaf_dviUserName_Edit_I')]" ).type( usuario );
+          $( "td.dxic input[type='password']" ).type( pass );
           $( "//a[@href='javascript:;']" ).click();
           waitFor( 5 ).seconds();
      }
@@ -87,8 +87,8 @@ public class maxTimePage extends PageObject{
           //  WebElement slider = getDriver().findElement(By.xpath("//div[@aria-labelledby='filter-toolbar-price-handle']"));
           //  new Actions(getDriver()).dragAndDropBy(slider,-188,0).build().perform();
           js.executeScript( "document.getElementsByClassName('fl-slider__handle')[0].style.left='20%'" );
-          robot.keyPress( KeyEvent.VK_DOWN );
-          robot.keyPress( KeyEvent.VK_ENTER );
+          //  robot.keyPress( KeyEvent.VK_DOWN );
+          //  robot.keyPress( KeyEvent.VK_ENTER );
      }
 
 
