@@ -18,10 +18,10 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-//@DefaultUrl("https://www.tiendasjumbo.co/supermercado/despensa/te-infusiones-e-instantaneos")
 @DefaultUrl("https://www.tiendasjumbo.co")
 //@DefaultUrl("https://cutt.ly/JeukmvJ")
 //@DefaultUrl("https://cutt.ly/UeorwqO")
+
 public class maxTimePage extends PageObject{
      @FindBy(xpath = "//span[contains(text(),'CATEGORÍAS')]")
      WebElementFacade btnCategoria;
@@ -30,6 +30,7 @@ public class maxTimePage extends PageObject{
      @FindBy(xpath = "//span[contains(text(),'Despensa')]")
      WebElementFacade catDespensa;
 
+     // ============ INSTANCIAS =============
      WebDriverWait espera = new WebDriverWait( getDriver(), 20 ); // TIEMPO EXPLICITO
      JavascriptExecutor js = (JavascriptExecutor) getDriver();
      Actions accion = new Actions( getDriver() );
@@ -89,7 +90,7 @@ public class maxTimePage extends PageObject{
      }
 
 
-     public void seleccionarCategoria() throws AWTException, InterruptedException{
+     public void seleccionarCategoria() {
 
           List <WebElementFacade> divs = findAll( "li.despensa li" );
           int count = divs.size();
