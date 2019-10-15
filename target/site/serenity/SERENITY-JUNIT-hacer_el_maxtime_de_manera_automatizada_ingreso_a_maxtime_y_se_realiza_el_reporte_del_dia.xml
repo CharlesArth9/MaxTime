@@ -1,28 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Hacer el maxTime de manera automatizada" skipped="0" tests="1" time="77.05" timestamp="2019-10-11 02:07:04"><testcase name="ingreso a maxtime y se realiza el reporte del dia"><error message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=77.0.3865.120)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.126', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.120, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\cmestral\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: 8bdc4d6e55f3d98587f0c23708ad7584&#10;*** Element info: {Using=xpath, value=//span[contains(@id,'select2-g6ek-container')]}&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.126', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchWindowException">no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=77.0.3865.120)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.126', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.120, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\cmestral\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 8bdc4d6e55f3d98587f0c23708ad7584
-*** Element info: {Using=xpath, value=//span[contains(@id,'select2-g6ek-container')]}
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.126', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: driver.version: unknown</error><system-err>no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=77.0.3865.120)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.126', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.120, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\cmestral\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 8bdc4d6e55f3d98587f0c23708ad7584
-*** Element info: {Using=xpath, value=//span[contains(@id,'select2-g6ek-container')]}
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.126', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: driver.version: unknown&#13;
-com.choucair.formacion.pageobjects.maxTimePage.seleccionarCategoria(maxTimePage.java:147)&#13;
-com.choucair.formacion.steps.maxTimeSteps.realizarReporte(maxTimeSteps.java:18)&#13;
-com.choucair.formacion.definition.maxTimeDefinitions.realizo_el_reporte_del_dia(maxTimeDefinitions.java:21)&#13;
-✽.realizo el reporte del dia(src/test/resources/features/maxTime.feature:5)&#13;
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Hacer el maxTime de manera automatizada" skipped="0" tests="1" time="0.88" timestamp="2019-10-15 09:19:25"><testcase name="ingreso a maxtime y se realiza el reporte del dia"><failure message="The page object class com.choucair.formacion.pageobjects.maxTimePage looks dodgy:&#10;Failed to instantiate page (java.lang.NullPointerException)" type="net.thucydides.core.pages.WrongPageError">The page object class com.choucair.formacion.pageobjects.maxTimePage looks dodgy:
+Failed to instantiate page (java.lang.NullPointerException)</failure><system-err>The page object class com.choucair.formacion.pageobjects.maxTimePage looks dodgy:
+Failed to instantiate page (java.lang.NullPointerException)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+✽.ingreso a MaxTime(src/test/resources/features/maxTime.feature:4)&#13;
 </system-err></testcase></testsuite>

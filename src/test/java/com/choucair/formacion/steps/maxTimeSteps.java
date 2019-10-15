@@ -15,10 +15,10 @@ public class maxTimeSteps{
      }
 
      public void realizarReporte() throws AWTException{
-         maxTimePage.login("cmestral","2619rey9");
+         /*maxTimePage.login("cmestral","2619rey9");
          maxTimePage.seleccionardia();
-         maxTimePage.realizarNuevoReporte();
-      //   maxTimePage.seleccionarCategoria();
+         maxTimePage.realizarNuevoReporte();*/
+         maxTimePage.seleccionarCategoria();
      }
 
      public void ValidarCierreDia(){

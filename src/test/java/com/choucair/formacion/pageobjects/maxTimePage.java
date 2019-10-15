@@ -3,9 +3,9 @@ package com.choucair.formacion.pageobjects;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.awaitility.Awaitility;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-//@DefaultUrl("https://www.tiendasjumbo.co")
-@DefaultUrl("https://cutt.ly/JeukmvJ")
+@DefaultUrl("https://www.tiendasjumbo.co")
+//@DefaultUrl("https://cutt.ly/JeukmvJ")
 //@DefaultUrl("https://cutt.ly/UeorwqO")
 
 public class maxTimePage extends PageObject{
@@ -46,6 +46,10 @@ public class maxTimePage extends PageObject{
                     return allMessagesProcessed;
                }
           };
+     }
+
+     protected void mostrarResultadoConteoDivs(int count){
+          System.out.println( "================== "+count+" ========================" );
      }
 
      // ==============================================================
@@ -94,7 +98,7 @@ public class maxTimePage extends PageObject{
 
           List <WebElementFacade> divs = findAll( "li.despensa li" );
           int count = divs.size();
-          System.out.println( "================== "+count+" ========================" );
+          mostrarResultadoConteoDivs( count );
           accion.moveToElement( btnCategoria ).perform();
           accion.moveToElement( catSupermercado ).perform();
           accion.moveToElement( catDespensa ).perform();
@@ -102,7 +106,9 @@ public class maxTimePage extends PageObject{
 
           WebElement hijo = getDriver().findElement( By.cssSelector( "li.despensa li:nth-of-type(16) a" ) );
           js.executeScript( "arguments[0].scrollIntoView();", hijo );
-          hijo.click();
+          JavaScriptClick.on( By.cssSelector( "li.despensa li:nth-of-type(16) a" ) );
+
+          // hijo.click();
 
           //   getDriver().manage().deleteAllCookies();
           //   getDriver().manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS );
@@ -136,7 +142,7 @@ public class maxTimePage extends PageObject{
 
           //=================== FORMAS DE SCROLL ============================
 
-          // js.executeScript("arguments[0].scrollIntoView();", hijo);
+          // js.executeScript("arguments[0].scrollIntoView();", hijo); <----- EL MEJOR
           // Scroll.to(hijo);
           // new ScrollToBy(hijo);
           // new ScrollToWebElement(hijo);
