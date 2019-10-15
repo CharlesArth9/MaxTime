@@ -11,3 +11,7 @@ q
 Asrc/test/java/com/choucair/formacion/pageobjects/maxTimePage.java,a\4\a43397511bc7487b9294c52828d3f3a47c6bda99
 C
 serenity.properties,2\5\25f1bbdc8dba7ca4a4b90251f1ef69621b24a28c
+m
+=src/test/java/com/choucair/formacion/pageobjects/Cliente.java,1\b\1b951a44c9ba5abde0c39e3a279dab4efa6edfc4
+w
+Gsrc/test/java/com/choucair/formacion/pageobjects/EjemploBreakLabel.java,6\1\617659e5017b8f69e5ab0fca7bc00e25ec59c7e6
