@@ -12,9 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
@@ -118,8 +116,9 @@ public class maxTimePage extends PageObject{
           } catch (Exception e) {
                e.getMessage();
           }
-
           // =================================================================
+
+          $( "//span[contains(@id,'select2-g6ek-container')]" ).click();
 
           // ============================= ESPERAS ===========================
           //  waitForTextToAppear("Supermercado");
@@ -134,9 +133,6 @@ public class maxTimePage extends PageObject{
           //  WebDriverWait waite = new WebDriverWait(getDriver(), 10);
           //   waite.until(ExpectedConditions.visibilityOfElementLocated(By.id("select2-g6ek-container")));
           // =================================================================
-
-          $( "//span[contains(@id,'select2-g6ek-container')]" ).click();
-
 
           //=================== FORMAS DE SCROLL ============================
 
