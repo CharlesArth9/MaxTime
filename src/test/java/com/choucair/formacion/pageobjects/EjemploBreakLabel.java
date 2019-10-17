@@ -15,9 +15,7 @@ public class EjemploBreakLabel{
           // El label en este caso se llama buscar y ocurre cuando se quiebra el ciclo for cuando el numero es encontrado
           buscar:
           for (i = 0; i < arregloInts.length; i++){
-               for (
-                    j = 0; j < arregloInts[i].length; j++
-               ){
+               for (j = 0; j < arregloInts[i].length; j++){
                     if ( arregloInts[i][j] == buscarA ){
                          encontrado = true;
                          break buscar;

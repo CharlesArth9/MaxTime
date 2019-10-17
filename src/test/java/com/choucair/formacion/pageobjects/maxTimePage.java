@@ -97,6 +97,8 @@ public class maxTimePage extends PageObject{
      public void seleccionarCategoria(){
 
           List <WebElementFacade> divs = findAll( "li.despensa li" );
+      //    List <WebElementFacade> radiosexce = findAll( By.name( "afiliadoExceptuadoGPM" ) );
+
           int count = divs.size();
           mostrarResultadoConteoDivs( count );
           accion.moveToElement( btnCategoria ).perform();
